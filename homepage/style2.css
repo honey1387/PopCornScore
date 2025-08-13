@@ -24,8 +24,10 @@ body {
 
 .nav-container {
     max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+    margin: 0;          /* remove centering */
+    margin-right: auto; /* anchor to left */
+    padding: 0 12px;    /* tighter horizontal padding */
+    padding-left: 50px;  /* closer to the left edge */
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -42,7 +44,7 @@ body {
 
 
 .nav-logo img.logo-main {
-    height: 48px;
+    height: 65px;
     width: auto;
     display: block;
     object-fit: contain;
