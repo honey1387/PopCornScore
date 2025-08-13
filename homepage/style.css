@@ -25,7 +25,14 @@ body{
     z-index:1000;
     box-shadow:0 2px 10px rgba(0,0,0,0.3);
 }
-
+.nav-container{
+    max-width: 1200px;
+    margin: auto;
+    padding:0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 .hero{
     height:900px;
     display: flex;
