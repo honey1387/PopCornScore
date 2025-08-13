@@ -12,6 +12,7 @@ body {
     min-height: 100vh;
     border:solid 0px;
     border-color: #000000;
+    border-radius: 50px;
 }
 
 .container {
