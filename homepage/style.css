@@ -34,6 +34,17 @@ body {
     justify-content: space-between;
     align-items: center;
 }
+.nav.logo{
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ffffff;
+    }
+    .nav.logo img {
+        margin-right: 10px;
+        
+    }
 .hero{
     height:900px;
     display: flex;
