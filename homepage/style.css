@@ -1,1 +1,20 @@
-
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+background:linear-gradient(135deg,#000000 70%, #0a1a2f 10%);
+}
+body{
+    font-family: 'Segoe Ul','Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #ffffff;
+}
+.hero{
+    height:900px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    overflow: hidden;
+}
