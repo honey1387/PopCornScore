@@ -12,31 +12,31 @@
 
 <body>
     <header>
-<nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-              <img src="../images/logo-main.png" alt="MovieDB Logo" class="logo-main">
-                <span>PopcornScore</span>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <img src="../images/logo-main.png" alt="MovieDB Logo" class="logo-main">
+                    <span>PopcornScore</span>
+                </div>
+                <div class="nav-menu">
+                    <a href="#home" class="nav-link active">Home</a>
+                    <a href="#movies" class="nav-link">Movies</a>
+                    <a href="#tv-shows" class="nav-link">TV Shows</a>
+                    <a href="#celebrities" class="nav-link">Celebrities</a>
+                    <a href="#news" class="nav-link">News</a>
+                </div>
+                <div class="nav-search">
+                    <input type="text" placeholder="Search movies, TV shows, celebrities..." id="searchInput">
+                    <button id="searchBtn"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
-            <div class="nav-menu">
-                <a href="#home" class="nav-link active">Home</a>
-                <a href="#movies" class="nav-link">Movies</a>
-                <a href="#tv-shows" class="nav-link">TV Shows</a>
-                <a href="#celebrities" class="nav-link">Celebrities</a>
-                <a href="#news" class="nav-link">News</a>
-            </div>
-            <div class="nav-search">
-                <input type="text" placeholder="Search movies, TV shows, celebrities..." id="searchInput">
-                <button id="searchBtn"><i class="fas fa-search"></i></button>
-            </div>
-            <div class="nav-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </nav>
-        
+        </nav>
+
     </header>
     <section id="home" class="hero">
         <div class="hero-content">
@@ -50,10 +50,17 @@
     </section>
     <section class="featured-section">
         <div class="container">
-            <h2> </h2>
-
+            <h2> Featured Movie </h2>
+            <div class="movie-grid" id="FeaturedMovie">
+            </div>
         </div>
-
+    </section>
+    <section class="top-rated-section">
+        <div class="container">
+            <h2> Top Rated Movie </h2>
+            <div class="movie-grid" id="topratedMovie">
+            </div>
+        </div>
     </section>
 </body>
 
