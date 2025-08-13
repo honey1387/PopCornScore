@@ -11,8 +11,6 @@ body {
     background: linear-gradient(135deg, #000000 0%, #0a1a2f 100%);
     min-height: 100vh;
     border:solid 0px;
-    border-color: #000000;
-    border-radius: 50px;
 }
 
 
@@ -54,4 +52,40 @@ font-size: 3.5rem;
 margin-bottom: 1rem;
 color:#ffffff;
 text-shadow: 2px 2px 4px rgb(0, 0, 0, 0.5);
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: #cccccc;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-primary {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-primary{
+    background: #f5c518;
+    color:black ;
+}
+
+.btn-primary:hover{
+    background: #e6b800;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgb(254, 197, 24, 0.3);
 }
