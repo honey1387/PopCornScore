@@ -33,6 +33,9 @@ body{
     justify-content: space-between;
     align-items: center;
 }
+.nav-logo{
+    
+}
 .hero{
     height:900px;
     display: flex;
