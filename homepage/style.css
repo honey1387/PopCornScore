@@ -1,1 +1,11 @@
-
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+background:linear-gradient(135deg,#000000 70%, #0a1a2f 10%);
+}
+body{
+    font-family: 'Segoe Ul','Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #ffffff;
+}
