@@ -89,3 +89,30 @@ text-shadow: 2px 2px 4px rgb(0, 0, 0, 0.5);
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgb(254, 197, 24, 0.3);
 }
+
+.featured-section,
+.top-rated-section,
+.categories-section{
+    padding: 4rem 0;
+}
+
+.featured-section{
+    background: #1a1a1a;
+}
+
+.top-rated-section{
+    background: #2a2a2a;
+}
+
+.categories-section{
+    background: #1a1a1a;
+}
+
+.featured-section h2,
+.top-rated-section h2,
+.categories-section h2{
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #f5c518;
+}
