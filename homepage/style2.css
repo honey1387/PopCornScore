@@ -1,4 +1,4 @@
-/* Reset and Base Styles */
+
 * {
     margin: 0;
     padding: 0;
@@ -8,18 +8,10 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    color: #333;
     background-color: #0f0f0f;
     color: #ffffff;
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* Navigation */
 .navbar {
     background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
     padding: 1rem 0;
@@ -35,27 +27,32 @@ body {
     margin: 0 auto;
     padding: 0 20px;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
 }
 
 .nav-logo {
-    display: flex;
+     display: flex; 
     align-items: center;
     font-size: 1.5rem;
     font-weight: bold;
     color: #f5c518;
+    gap: 12px;
 }
 
-.nav-logo i {
-    margin-right: 10px;
-    font-size: 2rem;
+
+.nav-logo img.logo-main {
+    height: 48px;
+    width: auto;
+    display: block;
+    object-fit: contain;
 }
 
 .nav-menu {
     display: flex;
     list-style: none;
     gap: 2rem;
+    margin-left: auto;
 }
 
 .nav-link {
@@ -91,6 +88,7 @@ body {
     display: flex;
     align-items: center;
     gap: 10px;
+    margin-left: 16px;
 }
 
 .nav-search input {
@@ -125,6 +123,7 @@ body {
     display: none;
     flex-direction: column;
     cursor: pointer;
+    margin-left: 16px;
 }
 
 .nav-toggle span {
@@ -135,16 +134,9 @@ body {
     transition: 0.3s;
 }
 
-/* Logo image sizing and alignment */
-.nav-logo img.logo-main,
-.logo-main {
-    height: 48px;
-    width: auto;
-    display: block;
-    object-fit: contain;
-}
+/* Logo text sizing and alignment */
 
-.nav-logo h2 {
+.nav-logo span {
     font-size: 1.4rem;
     font-weight: 700;
     color: #ffffff;
