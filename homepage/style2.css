@@ -121,21 +121,6 @@ body {
     transform: scale(1.1);
 }
 
-.nav-toggle {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-    margin-left: 16px;
-}
-
-.nav-toggle span {
-    width: 25px;
-    height: 3px;
-    background: #fff;
-    margin: 3px 0;
-    transition: 0.3s;
-}
-
 /* Logo text sizing and alignment */
 
 .nav-logo span {
