@@ -34,7 +34,6 @@ body {
 .nav-left {
     display: flex;
     align-items: center;
-    gap: 20px;
 }
 
 .nav-logo {
@@ -44,7 +43,6 @@ body {
     font-weight: bold;
     color: #f5c518;
     gap: 12px;
-    margin-left: -140px;
 }
 
 
@@ -101,7 +99,7 @@ body {
 .nav-right {
     display: flex;
     align-items: center;
-    gap: 50px;
+    gap: 20px;
     margin: 0;
 }
 
@@ -213,10 +211,6 @@ body {
         padding: 0 15px;
     }
     
-    .nav-logo {
-        margin-left: -100px;
-    }
-    
     .nav-search input {
         width: 250px;
     }
@@ -226,10 +220,6 @@ body {
     .nav-container {
         padding: 0 10px;
         gap: 30px;
-    }
-    
-    .nav-logo {
-        margin-left: -50px;
     }
     
     .nav-menu {
