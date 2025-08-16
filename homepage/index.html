@@ -7,7 +7,7 @@
     <title>PopcornScore</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="style2.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">                                
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -26,7 +26,7 @@
                     <a href="#news" class="nav-link">News</a>
                 </div>
                 <div class="nav-search">
- 
+
                     <input type="text" placeholder="Search movies, TV shows, celebrities..." id="searchInput">
                     <button id="searchBtn"><i class="fas fa-search"></i></button>
                 </div>
@@ -48,14 +48,38 @@
             </div>
         </div>
         <div class="hero-background"> </div>
+
+
     </section>
     <section class="featured-section">
         <div class="container">
             <h2> Featured Movie </h2>
-            <div class="movie-grid" id="FeaturedMovie">
+            <div class="slider" data-slider="Featured">
+                <button class="slider-btn prev">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <div class="slider-track" id="featuredMovies">
+                    <div class="poster">
+                        <img src="../images/picture/08de3203-2eb1-413b-aafd-6799ffd822f9.jpg">
+                        <span class="add-icon">+</span>
+                    </div>
+                    <div class="movie-info">
+                        <div class="rating">
+                            <span class="star">★</span>
+                            <span class="score">0.0</span>
+                        </div>
+                        <h3 class="title">NAME</h3>
+                        <div class="buttons">
+                            <button class="WatchList">+ WatchList</button>
+                            <button class="Trailer">▶ Trailer</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
+
+
     <section class="top-rated-section">
         <div class="container">
             <h2> Top Rated Movie </h2>
