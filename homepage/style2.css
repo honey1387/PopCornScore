@@ -95,7 +95,14 @@ body {
 .nav-link.active::after {
     width: 100%;
 }
-  
+
+.nav-right {
+     display: flex; 
+    align-items: center;
+    gap: 20px;
+    margin: 0;
+}   
+
 .nav-search {
      display: flex; 
     align-items: center;
