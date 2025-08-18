@@ -1,22 +1,5 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Segoe Ul', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    color: #ffffff;
-    background: linear-gradient(135deg, #000000 0%, #0a1a2f 100%);
-    min-height: 100vh;
-    border:solid 0px;
-}
-
-
-
-.hero{
-    height:900px;
+.hero {
+    height: 900px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -48,10 +31,10 @@ body {
 }
 
 .hero-content h1 {
-font-size: 3.5rem;
-margin-bottom: 1rem;
-color:#ffffff;
-text-shadow: 2px 2px 4px rgb(0, 0, 0, 0.5);
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgb(0, 0, 0, 0.5);
 }
 
 .hero-content p {
@@ -79,12 +62,12 @@ text-shadow: 2px 2px 4px rgb(0, 0, 0, 0.5);
     display: inline-block;
 }
 
-.btn-primary{
+.btn-primary {
     background: #f5c518;
-    color:black ;
+    color: black;
 }
 
-.btn-primary:hover{
+.btn-primary:hover {
     background: #e6b800;
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgb(254, 197, 24, 0.3);
@@ -130,7 +113,7 @@ text-shadow: 2px 2px 4px rgb(0, 0, 0, 0.5);
     gap: 1.5rem;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
-    padding: 0 2.5rem; /* room for buttons */
+    padding: 0 2.5rem;
 }
 
 .slider-track::-webkit-scrollbar {
@@ -146,7 +129,7 @@ text-shadow: 2px 2px 4px rgb(0, 0, 0, 0.5);
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(0,0,0,0.6);
+    background: rgba(0, 0, 0, 0.6);
     border: 2px solid #f5c518;
     color: #f5c518;
     width: 42px;
@@ -159,88 +142,14 @@ text-shadow: 2px 2px 4px rgb(0, 0, 0, 0.5);
     z-index: 5;
 }
 
-.slider-btn.prev { left: 0; }
-.slider-btn.next { right: 0; }
-
-
-
-.movie-card {
-    background-color: #1c1c1c;
-    border-radius: 10px;
-    overflow: hidden;
-    width: 200px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+.slider-btn.prev {
+    left: 0;
 }
 
-.poster {
-    position: relative;
+.slider-btn.next {
+    right: 0;
 }
 
-.poster img {
-    width: 100%;
-    display: block;
-}
-
-.add-icon {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    background-color: rgba(0,0,0,0.6);
-    padding: 5px 8px;
-    border-radius: 5px;
-    font-size: 18px;
-    cursor: pointer;
-}
-
-.movie-info {
-    padding: 10px;
-}
-
-.rating {
-    display: flex;
-    align-items: center;
-    margin-bottom: 5px;
-}
-
-.star {
-    color: gold;
-    font-size: 16px;
-    margin-right: 5px;
-}
-
-.title {
-    font-size: 16px;
-    margin: 0 0 10px;
-}
-
-.buttons button {
-    display: block;
-    width: 100%;
-    padding: 6px;
-    margin-bottom: 5px;
-    background-color: #222;
-    color: #4da6ff;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 14px;
-}
-
-.buttons button:hover {
-    background-color: #333;
-}
-
-.movie-poster-wrap {
-    position: relative;
-}
-
-.movie-poster {
-    width: 100%;
-    height: 350px;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-    background: #222;
-}
 
 .category-grid {
     display: grid;
@@ -256,6 +165,11 @@ text-shadow: 2px 2px 4px rgb(0, 0, 0, 0.5);
     cursor: pointer;
     transition: all 0.3s ease;
     border: 2px solid transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 200px;
 }
 
 .category-card:hover {
@@ -265,18 +179,28 @@ text-shadow: 2px 2px 4px rgb(0, 0, 0, 0.5);
 }
 
 .category-card img {
-width: 150px;
+    width: 150px;
+    height: auto;
+    margin-bottom: 1rem;
+    flex-shrink: 0;
 }
 
 .category-card h3 {
     color: #fff;
     font-size: 1.2rem;
+    margin: 0;
+    padding: 0;
+    line-height: 1.2;
+    align-self: flex-end;
+    width: 100%;
+    text-align: center;
 }
 
 .footer {
     background: #1a1a1a;
     padding: 3rem 0 1rem;
     border-top: 2px solid #f5c518;
+    direction: rtl;
 }
 
 .footer-content {
@@ -336,4 +260,3 @@ width: 150px;
     border-top: 1px solid #333;
     color: #999;
 }
-
