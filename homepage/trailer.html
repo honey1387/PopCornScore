@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>پیش‌نمایش فیلم - MovieDB</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .trailer-container {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            padding-top: 80px;
+        }
+        
+        .trailer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #f5c518;
+            text-decoration: none;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            transition: color 0.3s ease;
+        }
+        
+        .back-btn:hover {
+            color: #e6b800;
+        }
+        
+        .trailer-header {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            background: #333;
+            border-radius: 15px;
+            padding: 2rem;
+        }
+        
+        .trailer-poster {
+            width: 100%;
+            border-radius: 10px;
+        }
+        
+        .trailer-info h1 {
+            color: #f5c518;
+            margin-bottom: 1rem;
+            font-size: 2.5rem;
+        }
+        
+        .trailer-info p {
+            color: #ccc;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+        
+        .trailer-stats {
+            display: flex;
+            gap: 2rem;
+            margin: 1rem 0;
+        }
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #f5c518;
+        }
+        
+        .stat-label {
+            color: #999;
+            font-size: 0.9rem;
+        }
+        
+        .video-container {
+            background: #000;
+            border-radius: 15px;
+            overflow: hidden;
+            margin-bottom: 2rem;
+            position: relative;
+            padding-top: 56.25%; /* 16:9 aspect ratio */
+        }
+        
+        .video-placeholder {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #1a1a1a;
+            color: #fff;
+            font-size: 1.2rem;
+        }
+        
+        .play-btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(245, 197, 24, 0.9);
+            border: none;
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: #000;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .play-btn:hover {
+            background: #f5c518;
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+        
+        .related-movies {
+            margin-top: 3rem;
+        }
+        
+        .related-movies h2 {
+            color: #f5c518;
+            margin-bottom: 1.5rem;
+        }
+        
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .trailer-header {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .trailer-stats {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-film"></i>
+                <span>MovieDB</span>
+            </div>
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">خانه</a>
+                <a href="index.html#movies" class="nav-link">فیلم‌ها</a>
+                <a href="index.html#tv-shows" class="nav-link">سریال‌ها</a>
+                <a href="index.html#celebrities" class="nav-link">ستاره‌ها</a>
+                <a href="index.html#news" class="nav-link">اخبار</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="trailer-container">
+        <div class="trailer-content">
+            <a href="index.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i>
+                بازگشت به فیلم‌ها
+            </a>
+            
+            <div id="trailerContent">
+                <!-- Content will be loaded by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Movie data (same as in script.js)
+        const movies = [
+            {
+                id: 1,
+                title: "PONYO",
+                year: 2008,
+                rating: 7.9,
+                genre: "Animation",
+                poster: "picture/21f42d6a-c1cf-4646-8d3f-f174651250e0.jpg",
+                director: "Hayao Miyazaki",
+                cast: ["Yuria Nara", "Hiroki Doi", "Tomoko Yamaguchi"],
+                plot: "A five-year-old boy develops a relationship with Ponyo, a young goldfish princess who longs to become a human after falling in love with him.",
+                runtime: "101 min",
+                language: "Japanese",
+                country: "Japan"
+            },
+            {
+                id: 2,
+                title: "BIG HERO 6",
+                year: 2014,
+                rating: 7.9,
+                genre: "Animation",
+                poster: "picture/2a6c6ecc-23af-4ceb-805b-730f98573ac2.jpg",
+                director: "Don Hall, Chris Williams",
+                cast: ["Ryan Potter", "Scott Adsit", "Jamie Chung"],
+                plot: "The special bond that develops between plus-sized inflatable robot Baymax and prodigy Hiro Hamada, who team up with a group of friends to form a band of high-tech heroes.",
+                runtime: "102 min",
+                language: "English",
+                country: "United States"
+            },
+            {
+                id: 3,
+                title: "AVENGERS",
+                year: 2012,
+                rating: 7.9,
+                genre: "Action",
+                poster: "picture/2fa16a5a-2fec-4969-b91f-58369c99b1a2.jpg",
+                director: "Joss Whedon",
+                cast: ["Robert Downey Jr.", "Chris Evans", "Scarlett Johansson"],
+                plot: "Earth's mightiest heroes must come together and learn to fight as a team if they are going to stop the mischievous Loki and his alien army from enslaving humanity.",
+                runtime: "143 min",
+                language: "English",
+                country: "United States"
+            },
+            {
+                id: 4,
+                title: "QUEEN OF TEA",
+                year: 2023,
+                rating: 7.9,
+                genre: "Drama",
+                poster: "picture/47e0c5e8-27c5-40b8-ba17-468fcd55bd93.jpg",
+                director: "Unknown",
+                cast: ["Unknown"],
+                plot: "A compelling drama about power, tradition, and the art of tea ceremony.",
+                runtime: "120 min",
+                language: "English",
+                country: "United States"
+            },
+            {
+                id: 5,
+                title: "WEAPONS",
+                year: 2024,
+                rating: 7.9,
+                genre: "Action",
+                poster: "picture/44d75724-2f28-44a5-82c5-3d5f94263a82.jpg",
+                director: "Unknown",
+                cast: ["Unknown"],
+                plot: "An action-packed thriller about weapons and survival.",
+                runtime: "110 min",
+                language: "English",
+                country: "United States"
+            }
+        ];
+
+        // Get movie ID from URL parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const movieId = parseInt(urlParams.get('movie'));
+
+        // Find the movie
+        const movie = movies.find(m => m.id === movieId);
+
+        // Load trailer content
+        function loadTrailerContent() {
+            const trailerContent = document.getElementById('trailerContent');
+            
+                         if (!movie) {
+                 trailerContent.innerHTML = `
+                     <div style="text-align: center; color: #fff; padding: 4rem;">
+                         <h1>فیلم یافت نشد</h1>
+                         <p>پیش‌نمایش فیلم درخواستی یافت نشد.</p>
+                         <a href="index.html" style="color: #f5c518;">بازگشت به خانه</a>
+                     </div>
+                 `;
+                 return;
+             }
+
+            trailerContent.innerHTML = `
+                <div class="trailer-header">
+                    <img src="${movie.poster}" alt="${movie.title}" class="trailer-poster">
+                    <div class="trailer-info">
+                        <h1>${movie.title} (${movie.year})</h1>
+                        <p>${movie.plot}</p>
+                                                 <div class="trailer-stats">
+                             <div class="stat">
+                                 <div class="stat-value">${movie.rating}</div>
+                                 <div class="stat-label">امتیاز</div>
+                             </div>
+                             <div class="stat">
+                                 <div class="stat-value">${movie.runtime}</div>
+                                 <div class="stat-label">مدت زمان</div>
+                             </div>
+                             <div class="stat">
+                                 <div class="stat-value">${movie.genre}</div>
+                                 <div class="stat-label">ژانر</div>
+                             </div>
+                         </div>
+                         <p><strong>کارگردان:</strong> ${movie.director}</p>
+                         <p><strong>بازیگران:</strong> ${movie.cast.join(', ')}</p>
+                         <p><strong>زبان:</strong> ${movie.language}</p>
+                         <p><strong>کشور:</strong> ${movie.country}</p>
+                    </div>
+                </div>
+                
+                <div class="video-container">
+                    <div class="video-placeholder">
+                                                 <div style="text-align: center;">
+                             <div style="margin-bottom: 1rem;">🎬 پیش‌نمایش رسمی</div>
+                             <button class="play-btn" onclick="playTrailer()">
+                                 <i class="fas fa-play"></i>
+                             </button>
+                             <div style="margin-top: 1rem; font-size: 1rem; color: #999;">
+                                 برای پخش پیش‌نمایش کلیک کنید
+                             </div>
+                         </div>
+                    </div>
+                </div>
+                
+                                 <div class="related-movies">
+                     <h2>فیلم‌های مشابه</h2>
+                    <div class="related-grid">
+                        ${getRelatedMovies(movie).map(relatedMovie => `
+                            <div class="movie-card" onclick="window.location.href='trailer.html?movie=${relatedMovie.id}'">
+                                <div class="poster">
+                                    <img src="${relatedMovie.poster}" alt="${relatedMovie.title}">
+                                </div>
+                                <div class="movie-info">
+                                    <div class="rating">
+                                        <span class="star">★</span>
+                                        <span class="score">${relatedMovie.rating}</span>
+                                    </div>
+                                    <h3 class="title">${relatedMovie.title}</h3>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+        }
+
+        // Get related movies (same genre, excluding current movie)
+        function getRelatedMovies(currentMovie) {
+            return movies
+                .filter(m => m.id !== currentMovie.id && m.genre === currentMovie.genre)
+                .slice(0, 4);
+        }
+
+        // Play trailer function
+        function playTrailer() {
+            const videoContainer = document.querySelector('.video-container');
+                         videoContainer.innerHTML = `
+                 <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: #000; color: #fff;">
+                     <div style="text-align: center;">
+                         <div style="margin-bottom: 1rem;">🎬 در حال پخش پیش‌نمایش...</div>
+                         <div style="font-size: 1rem; color: #999;">
+                             این یک نسخه نمایشی است. در نسخه واقعی، ویدیوی پیش‌نمایش اینجا پخش می‌شود.
+                         </div>
+                         <button onclick="loadTrailerContent()" style="margin-top: 1rem; padding: 10px 20px; background: #f5c518; border: none; border-radius: 5px; cursor: pointer;">
+                             بازگشت به اطلاعات
+                         </button>
+                     </div>
+                 </div>
+             `;
+        }
+
+        // Load content when page loads
+        document.addEventListener('DOMContentLoaded', loadTrailerContent);
+    </script>
+</body>
+</html>
