@@ -4,175 +4,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>پیش‌نمایش فیلم - MovieDB</title>
+    <title>پیش‌نمایش فیلم - PopcornScore</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="style2.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <style>
-        .trailer-container {
-            min-height: 100vh;
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-            padding-top: 80px;
-        }
-
-        .trailer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-
-        .back-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            color: #f5c518;
-            text-decoration: none;
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
-            transition: color 0.3s ease;
-        }
-
-        .back-btn:hover {
-            color: #e6b800;
-        }
-
-        .trailer-header {
-            display: grid;
-            grid-template-columns: 300px 1fr;
-            gap: 2rem;
-            margin-bottom: 2rem;
-            background: #333;
-            border-radius: 15px;
-            padding: 2rem;
-        }
-
-        .trailer-poster {
-            width: 100%;
-            border-radius: 10px;
-        }
-
-        .trailer-info h1 {
-            color: #f5c518;
-            margin-bottom: 1rem;
-            font-size: 2.5rem;
-        }
-
-        .trailer-info p {
-            color: #ccc;
-            margin-bottom: 1rem;
-            line-height: 1.6;
-        }
-
-        .trailer-stats {
-            display: flex;
-            gap: 2rem;
-            margin: 1rem 0;
-        }
-
-        .stat {
-            text-align: center;
-        }
-
-        .stat-value {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #f5c518;
-        }
-
-        .stat-label {
-            color: #999;
-            font-size: 0.9rem;
-        }
-
-        .video-container {
-            background: #000;
-            border-radius: 15px;
-            overflow: hidden;
-            margin-bottom: 2rem;
-            position: relative;
-            padding-top: 56.25%;
-            /* 16:9 aspect ratio */
-        }
-
-        .video-placeholder {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: #1a1a1a;
-            color: #fff;
-            font-size: 1.2rem;
-        }
-
-        .play-btn {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: rgba(245, 197, 24, 0.9);
-            border: none;
-            border-radius: 50%;
-            width: 80px;
-            height: 80px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            color: #000;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .play-btn:hover {
-            background: #f5c518;
-            transform: translate(-50%, -50%) scale(1.1);
-        }
-
-        .related-movies {
-            margin-top: 3rem;
-        }
-
-        .related-movies h2 {
-            color: #f5c518;
-            margin-bottom: 1.5rem;
-        }
-
-        .related-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-        }
-
-        @media (max-width: 768px) {
-            .trailer-header {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .trailer-stats {
-                justify-content: center;
-            }
-        }
-    </style>
 </head>
 
 <body>
-    <!-- Navigation -->
+
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <i class="fas fa-film"></i>
-                <span>MovieDB</span>
+                <img src="../images/logo-main.png" class="logo-main">
+                <h2>PopcornScore</h2>
             </div>
             <div class="nav-menu">
                 <a href="index.html" class="nav-link">خانه</a>
                 <a href="index.html#movies" class="nav-link">فیلم‌ها</a>
                 <a href="index.html#tv-shows" class="nav-link">سریال‌ها</a>
-                <a href="index.html#celebrities" class="nav-link">ستاره‌ها</a>
+                <a href="index.html#celebrities" class="nav-link">افراد مشهور</a>
                 <a href="index.html#news" class="nav-link">اخبار</a>
             </div>
         </div>
@@ -182,96 +32,423 @@
         <div class="trailer-content">
             <a href="index.html" class="back-btn">
                 <i class="fas fa-arrow-left"></i>
-                بازگشت به فیلم‌ها
+                بازگشت به خانه
             </a>
 
             <div id="trailerContent">
-                <!-- Content will be loaded by JavaScript -->
             </div>
+
         </div>
     </div>
 
     <script>
-        // Movie data (same as in script.js)
-        const movies = [
-            {
-                id: 1,
-                title: "PONYO",
-                year: 2008,
-                rating: 7.9,
-                genre: "Animation",
-                poster: "picture/21f42d6a-c1cf-4646-8d3f-f174651250e0.jpg",
-                director: "Hayao Miyazaki",
-                cast: ["Yuria Nara", "Hiroki Doi", "Tomoko Yamaguchi"],
-                plot: "A five-year-old boy develops a relationship with Ponyo, a young goldfish princess who longs to become a human after falling in love with him.",
-                runtime: "101 min",
-                language: "Japanese",
-                country: "Japan"
-            },
-            {
-                id: 2,
-                title: "BIG HERO 6",
-                year: 2014,
-                rating: 7.9,
-                genre: "Animation",
-                poster: "picture/2a6c6ecc-23af-4ceb-805b-730f98573ac2.jpg",
-                director: "Don Hall, Chris Williams",
-                cast: ["Ryan Potter", "Scott Adsit", "Jamie Chung"],
-                plot: "The special bond that develops between plus-sized inflatable robot Baymax and prodigy Hiro Hamada, who team up with a group of friends to form a band of high-tech heroes.",
-                runtime: "102 min",
-                language: "English",
-                country: "United States"
-            },
-            {
-                id: 3,
-                title: "AVENGERS",
-                year: 2012,
-                rating: 7.9,
-                genre: "Action",
-                poster: "picture/2fa16a5a-2fec-4969-b91f-58369c99b1a2.jpg",
-                director: "Joss Whedon",
-                cast: ["Robert Downey Jr.", "Chris Evans", "Scarlett Johansson"],
-                plot: "Earth's mightiest heroes must come together and learn to fight as a team if they are going to stop the mischievous Loki and his alien army from enslaving humanity.",
-                runtime: "143 min",
-                language: "English",
-                country: "United States"
-            },
-            {
-                id: 4,
-                title: "QUEEN OF TEA",
-                year: 2023,
-                rating: 7.9,
-                genre: "Drama",
-                poster: "picture/47e0c5e8-27c5-40b8-ba17-468fcd55bd93.jpg",
-                director: "Unknown",
-                cast: ["Unknown"],
-                plot: "A compelling drama about power, tradition, and the art of tea ceremony.",
-                runtime: "120 min",
-                language: "English",
-                country: "United States"
-            },
-            {
-                id: 5,
-                title: "WEAPONS",
-                year: 2024,
-                rating: 7.9,
-                genre: "Action",
-                poster: "picture/44d75724-2f28-44a5-82c5-3d5f94263a82.jpg",
-                director: "Unknown",
-                cast: ["Unknown"],
-                plot: "An action-packed thriller about weapons and survival.",
-                runtime: "110 min",
-                language: "English",
-                country: "United States"
-            }
-        ];
+var movies = [
+    {
+        id: 1,
+        title: "تایتانیک",
+        year: 1997,
+        rating: 7.9,
+        genre: "رمانتیک",
+        poster: "../images/picture/feature/1.jpg",
+        director: "جیمز کامرون",
+        cast: ["لئوناردو دی‌کاپریو", "کیت وینسلت", "بیلی زین"],
+        plot: "یک جویندهٔ گنج به نام «بروک لاوت» که به دنبال الماس مشهوری به نام قلب اقیانوس در بقایای کشتی غرق شده تایتانیک است، صندوقچه‌ای در کشتی پیدا می‌کند که در آن نقاشی از چهره زنی جوان با الماسی بر گردن به چشم می‌خورد. پس از نمایش نقاشی در یک برنامه تلویزیونی، خانم پیری به اسم «رز دوویت بوکیتر» ادعا می‌کند که همان زن نقاشی است. او را به محل غرق کشتی می‌برند تا به جستجوگران کمک کند جای الماس را پیدا کنند، اما به جای این کار او داستان غرق شدن کشتی تایتانیک را برای همه آنگونه که خود از نزدیک دیده‌ بازگو می‌کند.",
+        runtime: "۱۹۵ دقیقه",
+        language: "	انگلیسی",
+        country: "	ایالات متحده"
+    },
+    {
+        id: 2,
+        title: "چگونه اژدهای خود را تربیت کنیم",
+        year: 2025,
+        rating: 7.9,
+        genre: "انیمیشن",
+        poster: "../images/picture/feature/2.jpg",
+        director: "	دین دبلوا",
+        cast: ["میسون تیمز", "نیکو پارکر", "گابریل هاول"],
+        plot: "اژدهاها به‌طور مداوم به روستای وایکینگی «برک» حمله می‌کنند، دام‌ها را می‌دزدند و جان اهالی را به خطر می‌اندازند. هیکاپ هورنِندس هدُک سوم، پسر شانزده‌سالهٔ رئیس قبیله استویک بزرگ، سعی دارد با اختراعات مکانیکی ضعف‌های جسمی‌اش را جبران کند. در یکی از حمله‌ها، هیکاپ با پرتاب‌گر بولاس، یک اژدهای نادر به نام نایت فیوری را هدف قرار می‌دهد، اما کسی حرفش را باور نمی‌کند. او برای اثبات خودش، به‌دنبال اژدها می‌رود تا آن را بکشد؛ ولی وقتی موجود زخمی و ناتوان را می‌بیند، با دلسوزی او را آزاد می‌کند. شگفت‌زده می‌شود وقتی می‌بیند اژدها جانش را می‌بخشد.",
+        runtime: "	۱۲۵ دقیقه",
+        language: "انگلیسی",
+        country: "ایالات متحده"
+    },
+    {
+        id: 3,
+        title: "ددپول و ولورین",
+        year: 2024,
+        rating: 7.5,
+        genre: "اکشن/کمدی",
+        poster: "../images/picture/feature/3.jpg",
+        director: "	شاون لوی ",
+        cast: ["رایان رینولدز", "هیو جکمن", "اما کورین"],
+        plot: "فیلم با نبش قبر ولورین توسط وید ویلسون (ددپول) آغاز می‌شود. ددپول معتقد است که ولورین هنوز زنده است، اما زمانی که اسکلت ولورین را می‌بیند به مرگ او یقین پیدا می‌کند. در این هنگام مأموران «سازمان تناقضات زمانی» (TVA) برای دستگیری او سر می‌رسند، در میانه مبارزه ددپول با آنها، داستان به سال ۲۰۱۸ بازمی‌گردد.",
+        runtime: "	۱۲۸ دقیقه",
+        language: "انگلیسی",
+        country: "ایالات متحده"
+    },
+    {
+        id: 4,
+        title: "بازگشت به تاریکی",
+        year: 2024,
+        rating: 6.3,
+        genre: "درام",
+        poster: "../images/picture/feature/4.jpg",
+        director: "	سم تیلور-جانسون",
+        cast: ["ماریسا آبلا", " جک اوکانل", "ادی مارسن "],
+        plot: "فیلم بازگشت به تاریکی داستان زندگی «اِیمی واینهاوس»، خواننده‌ی بریتانیایی با صدایی منحصربه‌فرد و پرقدرت را روایت می‌کند. این فیلم مسیر او را از شروع در محله‌ی زادگاهش، تا رسیدن به شهرت جهانی دنبال می‌کند؛ در حالی‌که بر ترانه‌های شخصی و پر احساسش، عشق‌های پر فراز و نشیب و چالش‌های سنگین شهرت و اعتیاد تمرکز دارد. Back to Black تصویری نزدیک و انسانی از دختری نشان می‌دهد که موسیقی‌اش جاودانه شد، اما زندگی‌اش بسیار کوتاه بود.",
+        runtime: "	۱۲۲ دقیقه",
+        language: " انگلیسی",
+        country: "ایالات متحده/بریتانیا "
+    },
+    {
+        id: 5,
+        title: "شهراشباح",
+        year: 2001,
+        rating: 8.6,
+        genre: "انیمیشن",
+        poster: "../images/picture/feature/5.jpg",
+        director: "	هایائو میازاکی",
+        cast: ["رومی هیراگی ", " میو ایرینو ", "ماری ناتسوکی"],
+        plot: "وقتی چیهیروی ۱۰ ساله به همراه پدر و مادرش برای زندگی از شهری به شهر دیگر می‌رود، ابتدا هیچ چیز به مذاقش خوش نمی‌آید و همه چیز از جمله مدرسه جدیدش برایش احساس تازگی ناخوشایندی دارد ، در راه خانه‌ جدید، چیهیرو و پدر و مادرش برحسب اتفاق به چیزی شبیه بازارچه برخورد می‌کنند اما غافل از اینکه آنجا یک بازارچه معمولی نیست و همین که هیچ کس در آنجا حضور ندارد به اهمیت مشکوک بودن آن قضیه می افزاید. پدر و مادر چیهیرو با دیدن غذاهای لذیذی که در غرفه های بازار وجود دارد هَوَس می‌کنند طعم آنها را بچشند و خیلی زود شروع به پرخوری می‌کنند ، از آنجایی که چیهیرو از اول احساس خوبی نسبت به آنجا نداشته به اصرار پدر و مادرش در مورد مزه کردن غذاها اهمیتی نمی‌دهد و اصرار می‌کند رفتارشان را تمام کنند و به راهشان ادامه دهند اما.....",
+        runtime: " 	۱۲۵ دقیقه",
+        language: "ژاپنی",
+        country: "ژاپن "
+    },
+    {
+        id: 6,
+        title: "دیوار به دیوار",
+        year: 2025,
+        rating: 5.9,
+        genre: "درام",
+        poster: "../images/picture/feature/6.jpg",
+        director: "کیم ته-جون ",
+        cast: [" کانگ هانول", "یئوم هی ران", "سئو هیون وو"],
+        plot: "وو-سئونگ، مردی که بالاخره به اندازه کافی پول پس‌انداز می‌کند تا یک آپارتمان بخرد، اما این خرید به کابوسی با ورشکستگی مالی و صداهای مرموز از طبقات همسایه تبدیل می‌شود.",
+        runtime: "۱۱۸ دقیقه",
+        language: "کره ای",
+        country: " کره جنوبی"
+    },
+    {
+        id: 7,
+        title: "علاءالدین",
+        year: 2019,
+        rating: 6.9,
+        genre: "رمانتیک/انیمیشن",
+        poster: "../images/picture/feature/7.jpg",
+        director: " 	گای ریچی",
+        cast: ["	ویل اسمیت", "مینا مسعود", "ائومی اسکات"],
+        plot: "در شهر خیالی اَغربه (الهام‌گرفته از بغداد و نامی ساخته‌شده با برخی حروف کلمه بغداد)، پسری یتیم و دوره‌گرد به نام علاءالدین به همراه میمونش، ابو، با شاهدخت یاسمین آشنا می‌شود که از زندگی محدودش در کاخ گریخته است. یاسمین می‌خواهد جانشین پدرش، سلطان، شود، اما انتظار می‌رود با یکی از خواستگاران سلطنتی ازدواج کند.",
+        runtime: "	۱۲۸ دقیقه",
+        language: "انگلیسی",
+        country: " ایالات متحده"
+    },
+    {
+        id: 8,
+        title: "جان ویک",
+        year: 2014,
+        rating: 7.5,
+        genre: "اکشن",
+        poster: "../images/picture/feature/8.jpg",
+        director: "	چاد استاهلسکی",
+        cast: ["کیانو ریوز", "مایکل نیکویست", "Jآلفی آلن"],
+        plot: "جان ویک در غم مرگ همسرش هلن به دلیل بیماری است. به‌منظور کمک به او برای کنار آمدن با غم، همسرش تصمیم گرفت بعد از مرگش توله سگی از نژاد بیگل به او اهدا کند. چند روز بعد، جان در یک پمپ بنزین در خارج از شهر نیویورک توسط گروهی از گانگسترهای روسی به رهبری یوسف مواجه می‌شود. یوسف نمی‌توانند جان را بترساند تا باس ۴۲۹ ماستنگ مدل ۱۹۶۹ خود را بفروشد.",
+        runtime: "	۱۰۱ دقیقه",
+        language: "	انگلیسی",
+        country: "	ایالات متحده"
+    },
+    {
+        id: 9,
+        title: "آواتار(اخرین بادافزار)",
+        year: 2008,
+        rating: 9.3,
+        genre: "اکشن",
+        poster: "../images/picture/feature/9.jpg",
+        director: "	لورن مک‌مولن",
+        cast: ["	زک تایلر آیزن", "	زک تایلر آیزن","دانته باسکو"],
+        plot: "جهان این داستان به چهار بخش اصلی تقسیم شده‌است که دربرگیرندهٔ قبایل آب، پادشاهی خاک، کشور آتش و کوچ‌نشینان باد است. در این سرزمین‌ها برخی از مردم می‌توانند عنصر ملی خود را کنترل کنند و به «اَفزارِش» درآورند که به آنها «عنصر افزار» گفته می‌شود. روش نبرد هر ملت برگرفته از یک سبک رزمی شرقی است. در این میان یک نفر که آواتار نامیده می‌شود، می‌تواند هر چهار عنصر را بیافزارد و مسئول برقراری صلح و توازن میان ملت‌ها و همچنین میان جهان فیزیکی و جهان ارواح است. ",
+        runtime: "	۲۲ دقیقه",
+        language: "انگلیسی",
+        country: "ایالات متحده"
+    },
+    {
+        id: 10,
+        title: "مردان ایکس",
+        year: 2003,
+        rating: 7.4,
+        genre: "اکشن/علمی تخیلی",
+        poster: "../images/picture/feature/10.jpg",
+        director: "	برایان سینگر",
+        cast: ["	هیو جکمن", "پاتریک استوارت","ایان مک‌کلن"],
+        plot: "در کاخ سفید، نایت‌کراولر، جهش‌یافته‌ای با توانایی تله‌پورت که شست‌وشوی مغزی شده، به رئیس‌جمهور ایالات متحده حمله می‌کند و چند مأمور را زخمی می‌سازد؛ اما پس از اصابت گلوله عقب‌نشینی می‌کند. در همین حال، لوگان در حال جست‌وجوی گذشته‌اش به پایگاه نظامی متروکه‌ای در کنار دریاچه آلکالی در آلبرتا می‌رود، اما چیزی نمی‌یابد. جین گری دچار پیش‌آگاهی‌هایی شده و تمرکز کردن برایش دشوار است، زیرا توانایی‌هایش روزبه‌روز از کنترلش خارج می‌شوند.",
+        runtime: "	۱۳۳ دقیقه",
+        language: "انگلیسی",
+        country: "ایالات متحده"
+    }];
+
+    var topRatedMovies = [
+    {
+        id: 103,
+        title: "شوالیه تاریکی",
+        year: 2008,
+        rating: 9.1,
+        genre:"اکشن" ,
+        poster: "../images/picture/top/3.jpg",
+        director: "فرانسیس فورد کوپولا",
+        cast: ["مارلون براندو", "آل پاچینو", "جیمز کان"],
+        plot: "داستان خانواده کورلئونه و دنیای مافیای نیویورک در دهه 1940.",
+        runtime: "۱۷۵ دقیقه",
+        language: "انگلیسی",
+        country: "ایالات متحده"
+    },
+    {
+        id: 104,
+        title: "پدر خوانده 2",
+        year: 1974,
+        rating: 9.0,
+        genre: "درام/اکشن",
+        poster: "../images/picture/top/4.jpg",
+        director: "رابرت زمکیس",
+        cast: ["تام هنکس", "رابین رایت", "گری سینیز"],
+        plot: "داستان زندگی فارست گامپ، مردی با ضریب هوشی پایین که در رویدادهای مهم تاریخ آمریکا حضور داشته.",
+        runtime: "۱۴۲ دقیقه",
+        language: "انگلیسی",
+        country: "ایالات متحده"
+    },
+    {
+        id: 105,
+        title: "دوازده مرد خشمگین",
+        year: 1957,
+        rating: 9.0,
+        genre: "اکشن/درام",
+        poster: "../images/picture/top/5.jpg",
+        director: "کوئنتین تارانتینو",
+        cast: ["جان تراولتا", "ساموئل ال. جکسون", "اوما تورمن"],
+        plot: "چندین داستان به هم پیوسته در دنیای جنایتکاران لس آنجلس.",
+        runtime: "۱۵۴ دقیقه",
+        language: "انگلیسی",
+        country: "ایالات متحده"
+    },
+    {
+        id: 106,
+        title: "ارباب حلقه ها (بازگشت پادشاه)",
+        year: 2004,
+        rating: 9.0,
+        genre: "درام/انیمیشن",
+        poster: "../images/picture/top/6.jpg",
+        director: "استنلی کوبریک",
+        cast: ["جک نیکلسون", "شلی دووال", "دنی لوید"],
+        plot: "خانواده‌ای که در هتلی دورافتاده نگهبان می‌شوند و با نیروهای شیطانی مواجه می‌شوند.",
+        runtime: "۱۴۶ دقیقه",
+        language: "انگلیسی",
+        country: "ایالات متحده"
+    },
+    {
+        id: 107,
+        title: "داستان عامه پسند",
+        year: 1994,
+        rating: 8.8,
+        genre: "اکشن",
+        poster: "../images/picture/top/7.jpg",
+        director: "واچوفسکی‌ها",
+        cast: ["کیانو ریوز", "لارنس فیشبرن", "کری-آن ماس"],
+        plot: "هکر جوانی که متوجه می‌شود دنیای واقعی در واقع شبیه‌سازی کامپیوتری است.",
+        runtime: "۱۳۶ دقیقه",
+        language: "انگلیسی",
+        country: "ایالات متحده"
+    },
+    {
+        id: 108,
+        title: "فهرست شیندرلر",
+        year: 1993,
+        rating: 9.0,
+        genre: "اگشن/درام",
+        poster: "../images/picture/top/8.jpg",
+        director: "فرناندو میرلس",
+        cast: ["الکس رودریگز", "لیندر فیلو", "په له هاج"],
+        plot: "داستان زندگی در فاولاهای ریو دو ژانیرو و رشد جنایت در آنجا.",
+        runtime: "۱۳۰ دقیقه",
+        language: "پرتغالی",
+        country: "برزیل"
+    },
+    {
+        id: 109,
+        title: "ارباب حلقه ها (دنبال کنندگان حلقه)",
+        year: 2001,
+        rating: 8.9,
+        genre: "درام/رمانتیک",
+        poster: "../images/picture/top/9.jpg",
+        director: "راب مارشال",
+        cast: ["ژانگ زی‌یی", "کن واتانابه", "میشل یئو"],
+        plot: "داستان زندگی یک گیشا در ژاپن قبل و بعد از جنگ جهانی دوم.",
+        runtime: "۱۴۵ دقیقه",
+        language: "انگلیسی",
+        country: "ایالات متحده"
+    },
+    {
+        id: 110,
+        title: "خوب بد زشت",
+        year: 1996,
+        rating: 8.8,
+        genre: "اکشن",
+        poster: "../images/picture/top/10.jpg",
+        director: "جیمز کامرون",
+        cast: ["سم ورثینگتون", "زوئی سالدانا", "سیگورنی ویور"],
+        plot: "سرباز معلولی که در مأموریتی به سیاره پاندورا می‌رود و با ساکنان آنجا ارتباط برقرار می‌کند.",
+        runtime: "۱۶۲ دقیقه",
+        language: "انگلیسی",
+        country: "ایالات متحده"
+    }
+];
+
+    var topRatedSeries = [
+    {
+        id: 201,
+        title: "بازی تاج و تخت",
+        year: 2011-2019,
+        rating: 9.2,
+        genre: "درام/علمی تخیلی",
+        poster: "../images/picture/series/1.jpg",
+        director: "مت گایدد",
+        cast: ["کتیلین استارک", "جان اسنو", "دنریس تارگرین"],
+        plot: "نبرد خاندان‌ها برای تصاحب تاج و تخت آهنین در وستروس.",
+        runtime: "۵۷ دقیقه",
+        language: "انگلیسی",
+        country: "ایالات متحده/بریتانیا"
+    },
+    {
+        id: 202,
+        title: "بریکینگ بد",
+        year: 2008-2013,
+        rating: 9.5,
+        genre: "اکشن",
+        poster: "../images/picture/series/2.jpg",
+        director: "پل مک‌گیگان",
+        cast: ["بندیکت کامبربچ", "مارتین فریمن"],
+        plot: "بازآفرینی مدرن ماجراهای شرلوک هلمز در لندن معاصر.",
+        runtime: "۹۰ دقیقه",
+        language: "انگلیسی",
+        country: "بریتانیا"
+    },
+    {
+        id: 203,
+        title: " اتفاقات عجیب",
+        year: 2016-2025,
+        rating: 8.6,
+        genre: "اکشن/علمی تخیلی",
+        poster: "../images/picture/series/3.jpg",
+        director: "الکس پینا",
+        cast: ["ال پروفوسور", "توکیو", "برلین"],
+        plot: "برنامه‌ریزی دقیق گروهی برای بزرگترین سرقت‌ها در اسپانیا.",
+        runtime: "۵۰ دقیقه",
+        language: "اسپانیایی",
+        country: "اسپانیا"
+    },
+    {
+        id: 204,
+        title: "دوستان",
+        year: 1994-2004,
+        rating: 8.7,
+        genre: "درام/کمدی",
+        poster: "../images/picture/series/4.jpg",
+        director: "برادران دافر",
+        cast: ["الیون", "مایک", "داستان هاربر"],
+        plot: "رخدادهای مرموز در شهری کوچک و دنیایی وارونه.",
+        runtime: "۵۵ دقیقه",
+        language: "انگلیسی",
+        country: "ایالات متحده"
+    },
+    {
+        id: 205,
+        title: "مردگام متحرک",
+        year: 2010-2022,
+        rating: 8.5,
+        genre: "ترسناک/اکشن",
+        poster: "../images/picture/series/5.jpg",
+        director: "مایکل هرست",
+        cast: ["راگنار", "لاگرتا", "رولو"],
+        plot: "افسانه راگنار لاثبروک و ماجراجویی‌های وایکینگ‌ها.",
+        runtime: "۴۵ دقیقه",
+        language: "انگلیسی",
+        country: "ایرلند/کانادا"
+    },
+    {
+        id: 206,
+        title: "شرلوک",
+        year: 2010-2017,
+        rating: 9.0,
+        genre: "درام/اکشن",
+        poster: "../images/picture/series/6.jpg",
+        director: "وینس گیلیگان",
+        cast: ["والتر وایت", "جسی پینکمن"],
+        plot: "معلم شیمی که برای تامین خانواده‌اش به دنیای جرم قدم می‌گذارد.",
+        runtime: "۴۷ دقیقه",
+        language: "انگلیسی",
+        country: "ایالات متحده"
+    },
+    {
+        id: 207,
+        title: " انفجار بزرگ",
+        year: 2007-219,
+        rating: 8.1,
+        genre: "درام/کمدی",
+        poster: "../images/picture/series/7.jpg",
+        director: "وینس گیلیگان",
+        cast: ["والتر وایت", "جسی پینکمن"],
+        plot: "معلم شیمی که برای تامین خانواده‌اش به دنیای جرم قدم می‌گذارد.",
+        runtime: "۴۷ دقیقه",
+        language: "انگلیسی",
+        country: "ایالات متحده"
+    },
+    {
+        id: 208,
+        title: "دکستر",
+        year: 2006-2014,
+        rating: 8.6,
+        genre: "درام/اکشن",
+        poster: "../images/picture/series/8.jpg",
+        director: "وینس گیلیگان",
+        cast: ["والتر وایت", "جسی پینکمن"],
+        plot: "معلم شیمی که برای تامین خانواده‌اش به دنیای جرم قدم می‌گذارد.",
+        runtime: "۴۷ دقیقه",
+        language: "انگلیسی",
+        country: "ایالات متحده"
+    },
+    {
+        id: 209,
+        title: "پسر ها",
+        year: 20019,
+        rating: 8.6,
+        genre: "درام/کمدی",
+        poster: "../images/picture/series/9.jpg",
+        director: "وینس گیلیگان",
+        cast: ["والتر وایت", "جسی پینکمن"],
+        plot: "معلم شیمی که برای تامین خانواده‌اش به دنیای جرم قدم می‌گذارد.",
+        runtime: "۴۷ دقیقه",
+        language: "انگلیسی",
+        country: "ایالات متحده"
+    },
+    {
+        id: 210,
+        title: "دفتر",
+        year: 2005-2013,
+        rating: 9.0,
+        genre: "درام/اکشن",
+        poster: "../images/picture/series/6.jpg",
+        director: "وینس گیلیگان",
+        cast: ["والتر وایت", "جسی پینکمن"],
+        plot: "معلم شیمی که برای تامین خانواده‌اش به دنیای جرم قدم می‌گذارد.",
+        runtime: "۴۷ دقیقه",
+        language: "انگلیسی",
+        country: "ایالات متحده"
+    }
+    ];
 
         // Get movie ID from URL parameter
         const urlParams = new URLSearchParams(window.location.search);
         const movieId = parseInt(urlParams.get('movie'));
 
-        // Find the movie
-        const movie = movies.find(m => m.id === movieId);
+        // Find the movie across all sections
+        const allItems = [...movies, ...topRatedMovies, ...topRatedSeries];
+        const movie = allItems.find(m => m.id === movieId);
 
         // Load trailer content
         function loadTrailerContent() {
@@ -351,9 +528,9 @@
             `;
         }
 
-        // Get related movies (same genre, excluding current movie)
+        // Get related movies/series (same genre, excluding current item)
         function getRelatedMovies(currentMovie) {
-            return movies
+            return allItems
                 .filter(m => m.id !== currentMovie.id && m.genre === currentMovie.genre)
                 .slice(0, 4);
         }
