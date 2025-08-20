@@ -28,11 +28,6 @@ body {
     justify-content: space-between;
     align-items: center;
 }
-/* 
-.nav-left {
-    display: flex;
-    align-items: center;
-} */
 
 .nav-logo {
     display: flex;
