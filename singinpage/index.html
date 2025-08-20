@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صفحه ثبت نام</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="login-card">
+            <div class="left-panel">
+                <img src="..//images/singinpage/singin.jpg" alt="عکس اینجا قرار دارد">
+
+                <div class="tab-overlay">
+                    <div class="tab-content">
+                        <div class="tab-text">ورود</div>
+                        <div class="tab-text">ثبت نام</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="right-panel">
+                <div class="logo-section">
+                    <div class="logo">
+                        <img src="../images/logo-main.png" alt="لوگو">
+                    </div>
+                    <h1 class="login-title">ورود</h1>
+                </div>
+
+                <form class="login-form">
+                    <div class="input-group">
+                        <i class="fas fa-user input-icon"></i>
+                        <input type="email" id="lohinEmail" placeholder="ایمیل..." required>
+                        <div class="input-line"></div>
+                    </div>
+
+                    <div class="input-group">
+                        <i class="fas fa-lock input-icon"></i>
+                        <input type="password" id="lohinPassword" placeholder="رمز عبور..." required>
+                        <div class="input-line"></div>
+                    </div>
+
+                    <div class="forgot-password">
+                        <a href="#" class="forgot-link">رمز عبور خود را فراموش کردید ؟</a>
+                    </div>
+
+                    <button type="submit" class="login-btn">ورود</button>
+                </form>
+
+                  <form class="signin-form" id="signinForm">
+                    <div class="input-group">
+                        <i class="fas fa-user input-icon"></i>
+                        <input type="text" id="signinUsername" placeholder="نام کاربری..." required>
+                        <div class="input-line"></div>
+                    </div>
+
+                    <div class="input-group">
+                        <i class="fas fa-envelope input-icon"></i>
+                        <input type="email" id="signinEmail" placeholder="ایمیل..." required>
+                        <div class="input-line"></div>
+                    </div>
+                    
+                    <div class="input-group">
+                        <i class="fas fa-lock input-icon"></i>
+                        <input type="password" id="signinPassword" placeholder="رمز عبور..." required>
+                        <div class="input-line"></div>
+                    </div>
+
+                    <div class="input-group">
+                        <i class="fas fa-lock input-icon"></i>
+                        <input type="password" id="signinConfirmPassword" placeholder=" تکرار رمز عبور..." required>
+                        <div class="input-line"></div>
+                    </div>
+
+                    <div class="show-password">
+                        <label class="checkbox-container">
+                            <input type="checkbox" id="showPassword">
+                            <span class="checkmark"></span>
+                            نمایش رمز عبور
+                        </label>
+                    </div>
+                    
+                    <button type="submit" class="login-btn">ثبت نام</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
