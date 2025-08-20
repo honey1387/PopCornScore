@@ -100,71 +100,70 @@ var movies = [
     },
     {
         id: 8,
-        title: "Interstellar",
+        title: "جان ویک",
         year: 2014,
-        rating: 8.6,
-        genre: "Sci-Fi",
-        poster: "picture/33a98074-f2f3-4d94-a5d5-4b5af1238e8a.jpg",
-        director: "Christopher Nolan",
-        cast: ["Matthew McConaughey", "Anne Hathaway", "Jessica Chastain"],
-        plot: "A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.",
-        runtime: "169 min",
-        language: "English",
-        country: "United States"
+        rating: 7.5,
+        genre: "اکشن",
+        poster: "../images/picture/feature/8.jpg",
+        director: "	چاد استاهلسکی",
+        cast: ["کیانو ریوز", "مایکل نیکویست", "Jآلفی آلن"],
+        plot: "جان ویک در غم مرگ همسرش هلن به دلیل بیماری است. به‌منظور کمک به او برای کنار آمدن با غم، همسرش تصمیم گرفت بعد از مرگش توله سگی از نژاد بیگل به او اهدا کند. چند روز بعد، جان در یک پمپ بنزین در خارج از شهر نیویورک توسط گروهی از گانگسترهای روسی به رهبری یوسف مواجه می‌شود. یوسف نمی‌توانند جان را بترساند تا باس ۴۲۹ ماستنگ مدل ۱۹۶۹ خود را بفروشد.",
+        runtime: "	۱۰۱ دقیقه",
+        language: "	انگلیسی",
+        country: "	ایالات متحده"
     },
     {
         id: 9,
-        title: "John Wick",
-        year: 2014,
-        rating: 7.4,
+        title: "آواتار(اخرین بادافزار)",
+        year: 2008,
+        rating: 9.3,
         genre: "اکشن",
-        poster: "picture/John Wick.jpg",
-        director: "Chad Stahelski",
-        cast: ["Keanu Reeves", "Michael Nyqvist"],
-        plot: "An ex-hitman comes out of retirement...",
-        runtime: "101 min",
-        language: "English",
-        country: "United States"
+        poster: "../images/picture/feature/9.jpg",
+        director: "	لورن مک‌مولن",
+        cast: ["	زک تایلر آیزن", "	زک تایلر آیزن","دانته باسکو"],
+        plot: "جهان این داستان به چهار بخش اصلی تقسیم شده‌است که دربرگیرندهٔ قبایل آب، پادشاهی خاک، کشور آتش و کوچ‌نشینان باد است. در این سرزمین‌ها برخی از مردم می‌توانند عنصر ملی خود را کنترل کنند و به «اَفزارِش» درآورند که به آنها «عنصر افزار» گفته می‌شود. روش نبرد هر ملت برگرفته از یک سبک رزمی شرقی است. در این میان یک نفر که آواتار نامیده می‌شود، می‌تواند هر چهار عنصر را بیافزارد و مسئول برقراری صلح و توازن میان ملت‌ها و همچنین میان جهان فیزیکی و جهان ارواح است. ",
+        runtime: "	۲۲ دقیقه",
+        language: "انگلیسی",
+        country: "ایالات متحده"
     },
     {
         id: 10,
-        title: "Black Swan",
-        year: 2010,
-        rating: 8.0,
-        genre: "درام",
-        poster: "picture/Black Swan.jpg",
-        director: "Darren Aronofsky",
-        cast: ["Natalie Portman", "Mila Kunis"],
-        plot: "A committed dancer wins the lead role...",
-        runtime: "108 min",
-        language: "English",
-        country: "United States"
+        title: "مردان ایکس",
+        year: 2003,
+        rating: 7.4,
+        genre: "اکشن/علمی تخیلی",
+        poster: "../images/picture/feature/10.jpg",
+        director: "	برایان سینگر",
+        cast: ["	هیو جکمن", "پاتریک استوارت","ایان مک‌کلن"],
+        plot: "در کاخ سفید، نایت‌کراولر، جهش‌یافته‌ای با توانایی تله‌پورت که شست‌وشوی مغزی شده، به رئیس‌جمهور ایالات متحده حمله می‌کند و چند مأمور را زخمی می‌سازد؛ اما پس از اصابت گلوله عقب‌نشینی می‌کند. در همین حال، لوگان در حال جست‌وجوی گذشته‌اش به پایگاه نظامی متروکه‌ای در کنار دریاچه آلکالی در آلبرتا می‌رود، اما چیزی نمی‌یابد. جین گری دچار پیش‌آگاهی‌هایی شده و تمرکز کردن برایش دشوار است، زیرا توانایی‌هایش روزبه‌روز از کنترلش خارج می‌شوند.",
+        runtime: "	۱۳۳ دقیقه",
+        language: "انگلیسی",
+        country: "ایالات متحده"
     }
 ];
 
-// آرایه جداگانه برای Top Rated Movies
 var topRatedMovies = [
     {
         id: 101,
-        title: "پسر شجاع",
-        year: 1995,
-        rating: 8.3,
+        title: "رستگاری در شاوشنک ",
+        year: 1994,
+        rating: 9.3,
         genre: "اکشن/درام",
-        poster: "picture/braveheart.jpg",
-        director: "مل گیبسون",
-        cast: ["مل گیبسون", "سوفی مارسو", "پاتریک مک‌گوآن"],
-        plot: "داستان ویلیام والاس، قهرمان اسکاتلندی که مردمش را علیه حاکمیت ظالمانه انگلستان رهبری کرد.",
-        runtime: "۱۷۸ دقیقه",
+        poster: "../images/picture/top/1.jpg",
+        director: "	فرانک دارابونت ",
+        cast: [" تیم رابینز", " مورگان فریمن", "باب گانتون "],
+        plot: "اندی دافرین، یک بانکدار آرام و باهوش، به‌اشتباه به جرم قتل همسرش و معشوقه‌ی او به حبس ابد در زندان شاوشنک محکوم می‌شود. در زندان، او با شرایط سخت، خشونت و فساد مأموران و زندانیان روبه‌رو می‌شود، اما به‌جای تسلیم شدن، با ذهن خلاق و اراده‌ی قوی خود راهی برای معنا دادن به زندگی پیدا می‌کند.او به‌تدریج با زندانی‌ای به نام رد (مورگان فریمن) دوست می‌شود.",
+        runtime: "۱۴۲ دقیقه",
         language: "انگلیسی",
         country: "ایالات متحده"
     },
     {
         id: 102,
-        title: "فهرست شیندلر",
-        year: 1993,
-        rating: 8.9,
-        genre: "درام/تاریخی",
-        poster: "picture/schindlers-list.jpg",
+        title: "1پدر خوانده",
+        year: 1972,
+        rating: 9.2,
+        genre: "درام/اکشن",
+        poster: "../images/picture/top/2.jpg",
         director: "استیون اسپیلبرگ",
         cast: ["لیام نیسون", "بن کینگزلی", "رالف فاینز"],
         plot: "داستان واقعی اسکار شیندلر که در طول جنگ جهانی دوم جان بیش از 1000 یهودی را نجات داد.",
@@ -174,11 +173,11 @@ var topRatedMovies = [
     },
     {
         id: 103,
-        title: "پدرخوانده",
-        year: 1972,
-        rating: 9.2,
-        genre: "درام/جنایی",
-        poster: "picture/godfather.jpg",
+        title: "شوالیه تاریکی",
+        year: 2008,
+        rating: 9.1,
+        genre:"اکشن" ,
+        poster: "../images/picture/top/3.jpg",
         director: "فرانسیس فورد کوپولا",
         cast: ["مارلون براندو", "آل پاچینو", "جیمز کان"],
         plot: "داستان خانواده کورلئونه و دنیای مافیای نیویورک در دهه 1940.",
@@ -188,11 +187,11 @@ var topRatedMovies = [
     },
     {
         id: 104,
-        title: "فارست گامپ",
-        year: 1994,
-        rating: 8.8,
-        genre: "درام/کمدی",
-        poster: "picture/forrest-gump.jpg",
+        title: "پدر خوانده 2",
+        year: 1974,
+        rating: 9.0,
+        genre: "درام/اکشن",
+        poster: "../images/picture/top/4.jpg",
         director: "رابرت زمکیس",
         cast: ["تام هنکس", "رابین رایت", "گری سینیز"],
         plot: "داستان زندگی فارست گامپ، مردی با ضریب هوشی پایین که در رویدادهای مهم تاریخ آمریکا حضور داشته.",
@@ -202,11 +201,11 @@ var topRatedMovies = [
     },
     {
         id: 105,
-        title: "پالپ فیکشن",
-        year: 1994,
-        rating: 8.9,
-        genre: "جنایی/درام",
-        poster: "picture/pulp-fiction.jpg",
+        title: "دوازده مرد خشمگین",
+        year: 1957,
+        rating: 9.0,
+        genre: "اکشن/درام",
+        poster: "../images/picture/top/5.jpg",
         director: "کوئنتین تارانتینو",
         cast: ["جان تراولتا", "ساموئل ال. جکسون", "اوما تورمن"],
         plot: "چندین داستان به هم پیوسته در دنیای جنایتکاران لس آنجلس.",
@@ -216,11 +215,11 @@ var topRatedMovies = [
     },
     {
         id: 106,
-        title: "شووینگ",
-        year: 1980,
-        rating: 8.4,
-        genre: "ترسناک",
-        poster: "picture/shining.jpg",
+        title: "ارباب حلقه ها (بازگشت پادشاه)",
+        year: 2004,
+        rating: 9.0,
+        genre: "درام/انیمیشن",
+        poster: "../images/picture/top/6.jpg",
         director: "استنلی کوبریک",
         cast: ["جک نیکلسون", "شلی دووال", "دنی لوید"],
         plot: "خانواده‌ای که در هتلی دورافتاده نگهبان می‌شوند و با نیروهای شیطانی مواجه می‌شوند.",
@@ -230,11 +229,11 @@ var topRatedMovies = [
     },
     {
         id: 107,
-        title: "ماتریکس",
-        year: 1999,
-        rating: 8.7,
-        genre: "اکشن/علمی-تخیلی",
-        poster: "picture/matrix.jpg",
+        title: "داستان عامه پسند",
+        year: 1994,
+        rating: 8.8,
+        genre: "اکشن",
+        poster: "../images/picture/top/7.jpg",
         director: "واچوفسکی‌ها",
         cast: ["کیانو ریوز", "لارنس فیشبرن", "کری-آن ماس"],
         plot: "هکر جوانی که متوجه می‌شود دنیای واقعی در واقع شبیه‌سازی کامپیوتری است.",
@@ -244,11 +243,11 @@ var topRatedMovies = [
     },
     {
         id: 108,
-        title: "شهر خدا",
-        year: 2002,
-        rating: 8.6,
-        genre: "جنایی/درام",
-        poster: "picture/city-of-god.jpg",
+        title: "فهرست شیندرلر",
+        year: 1993,
+        rating: 9.0,
+        genre: "اگشن/درام",
+        poster: "../images/picture/top/8.jpg",
         director: "فرناندو میرلس",
         cast: ["الکس رودریگز", "لیندر فیلو", "په له هاج"],
         plot: "داستان زندگی در فاولاهای ریو دو ژانیرو و رشد جنایت در آنجا.",
@@ -258,11 +257,11 @@ var topRatedMovies = [
     },
     {
         id: 109,
-        title: "خاطرات یک گیشا",
-        year: 2005,
-        rating: 7.3,
+        title: "ارباب حلقه ها (دنبال کنندگان حلقه)",
+        year: 2001,
+        rating: 8.9,
         genre: "درام/رمانتیک",
-        poster: "picture/memoirs-of-geisha.jpg",
+        poster: "../images/picture/top/9.jpg",
         director: "راب مارشال",
         cast: ["ژانگ زی‌یی", "کن واتانابه", "میشل یئو"],
         plot: "داستان زندگی یک گیشا در ژاپن قبل و بعد از جنگ جهانی دوم.",
@@ -272,11 +271,11 @@ var topRatedMovies = [
     },
     {
         id: 110,
-        title: "آواتار",
-        year: 2009,
-        rating: 7.8,
-        genre: "اکشن/ماجراجویی",
-        poster: "picture/avatar.jpg",
+        title: "خوب بد زشت",
+        year: 1996,
+        rating: 8.8,
+        genre: "اکشن",
+        poster: "../images/picture/top/10.jpg",
         director: "جیمز کامرون",
         cast: ["سم ورثینگتون", "زوئی سالدانا", "سیگورنی ویور"],
         plot: "سرباز معلولی که در مأموریتی به سیاره پاندورا می‌رود و با ساکنان آنجا ارتباط برقرار می‌کند.",
@@ -286,8 +285,153 @@ var topRatedMovies = [
     }
 ];
 
+// Top Rated Series
+var topRatedSeries = [
+    {
+        id: 201,
+        title: "بازی تاج و تخت",
+        year: 2011,
+        rating: 9.2,
+        genre: "درام/فانتزی",
+        poster: "../images/picture/series/1.jpg",
+        director: "مت گایدد",
+        cast: ["کتیلین استارک", "جان اسنو", "دنریس تارگرین"],
+        plot: "نبرد خاندان‌ها برای تصاحب تاج و تخت آهنین در وستروس.",
+        runtime: "۵۷ دقیقه",
+        language: "انگلیسی",
+        country: "ایالات متحده/بریتانیا"
+    },
+    {
+        id: 202,
+        title: "شرلوک",
+        year: 2010,
+        rating: 9.1,
+        genre: "معمایی/جنایی",
+        poster: "../images/picture/series/2.jpg",
+        director: "پل مک‌گیگان",
+        cast: ["بندیکت کامبربچ", "مارتین فریمن"],
+        plot: "بازآفرینی مدرن ماجراهای شرلوک هلمز در لندن معاصر.",
+        runtime: "۹۰ دقیقه",
+        language: "انگلیسی",
+        country: "بریتانیا"
+    },
+    {
+        id: 203,
+        title: "خانه کاغذی",
+        year: 2017,
+        rating: 8.2,
+        genre: "اکشن/هیجان‌انگیز",
+        poster: "../images/picture/series/3.jpg",
+        director: "الکس پینا",
+        cast: ["ال پروفوسور", "توکیو", "برلین"],
+        plot: "برنامه‌ریزی دقیق گروهی برای بزرگترین سرقت‌ها در اسپانیا.",
+        runtime: "۵۰ دقیقه",
+        language: "اسپانیایی",
+        country: "اسپانیا"
+    },
+    {
+        id: 204,
+        title: "چیزهای عجیب",
+        year: 2016,
+        rating: 8.7,
+        genre: "علمی‌تخیلی/ترسناک",
+        poster: "../images/picture/series/4.jpg",
+        director: "برادران دافر",
+        cast: ["الیون", "مایک", "داستان هاربر"],
+        plot: "رخدادهای مرموز در شهری کوچک و دنیایی وارونه.",
+        runtime: "۵۵ دقیقه",
+        language: "انگلیسی",
+        country: "ایالات متحده"
+    },
+    {
+        id: 205,
+        title: "وایکینگ‌ها",
+        year: 2013,
+        rating: 8.5,
+        genre: "تاریخی/اکشن",
+        poster: "../images/picture/series/5.jpg",
+        director: "مایکل هرست",
+        cast: ["راگنار", "لاگرتا", "رولو"],
+        plot: "افسانه راگنار لاثبروک و ماجراجویی‌های وایکینگ‌ها.",
+        runtime: "۴۵ دقیقه",
+        language: "انگلیسی",
+        country: "ایرلند/کانادا"
+    },
+    {
+        id: 206,
+        title: "برکینگ بد",
+        year: 2008,
+        rating: 9.5,
+        genre: "درام/جنایی",
+        poster: "../images/picture/series/6.jpg",
+        director: "وینس گیلیگان",
+        cast: ["والتر وایت", "جسی پینکمن"],
+        plot: "معلم شیمی که برای تامین خانواده‌اش به دنیای جرم قدم می‌گذارد.",
+        runtime: "۴۷ دقیقه",
+        language: "انگلیسی",
+        country: "ایالات متحده"
+    },
+    {
+        id: 207,
+        title: "برکینگ بد",
+        year: 2008,
+        rating: 9.5,
+        genre: "درام/جنایی",
+        poster: "../images/picture/series/6.jpg",
+        director: "وینس گیلیگان",
+        cast: ["والتر وایت", "جسی پینکمن"],
+        plot: "معلم شیمی که برای تامین خانواده‌اش به دنیای جرم قدم می‌گذارد.",
+        runtime: "۴۷ دقیقه",
+        language: "انگلیسی",
+        country: "ایالات متحده"
+    },
+    {
+        id: 208,
+        title: "برکینگ بد",
+        year: 2008,
+        rating: 9.5,
+        genre: "درام/جنایی",
+        poster: "../images/picture/series/6.jpg",
+        director: "وینس گیلیگان",
+        cast: ["والتر وایت", "جسی پینکمن"],
+        plot: "معلم شیمی که برای تامین خانواده‌اش به دنیای جرم قدم می‌گذارد.",
+        runtime: "۴۷ دقیقه",
+        language: "انگلیسی",
+        country: "ایالات متحده"
+    },
+    {
+        id: 209,
+        title: "برکینگ بد",
+        year: 2008,
+        rating: 9.5,
+        genre: "درام/جنایی",
+        poster: "../images/picture/series/6.jpg",
+        director: "وینس گیلیگان",
+        cast: ["والتر وایت", "جسی پینکمن"],
+        plot: "معلم شیمی که برای تامین خانواده‌اش به دنیای جرم قدم می‌گذارد.",
+        runtime: "۴۷ دقیقه",
+        language: "انگلیسی",
+        country: "ایالات متحده"
+    },
+    {
+        id: 210,
+        title: "برکینگ بد",
+        year: 2008,
+        rating: 9.5,
+        genre: "درام/جنایی",
+        poster: "../images/picture/series/6.jpg",
+        director: "وینس گیلیگان",
+        cast: ["والتر وایت", "جسی پینکمن"],
+        plot: "معلم شیمی که برای تامین خانواده‌اش به دنیای جرم قدم می‌گذارد.",
+        runtime: "۴۷ دقیقه",
+        language: "انگلیسی",
+        country: "ایالات متحده"
+    },
+];
+
 var featuredMoviesContainer = document.getElementById('featuredMovies');
 var topRatedMoviesContainer = document.getElementById('topRatedMovies');
+var topRatedSeriesContainer = document.getElementById('topRatedSeries');
 var searchInput = document.getElementById('searchInput');
 var searchBtn = document.getElementById('searchBtn');
 var movieModal = document.getElementById('movieModal');
@@ -298,6 +442,7 @@ var categoryCards = document.querySelectorAll('.category-card');
 document.addEventListener('DOMContentLoaded', function () {
     loadFeaturedMovies();
     loadTopRatedMovies();
+    loadTopRatedSeries();
     setupEventListeners();
     setupNavigation();
     setupSliders();
@@ -323,6 +468,18 @@ function loadTopRatedMovies() {
     topRatedMoviesContainer.innerHTML = topRatedHTML;
 }
 
+// Top Rated Series
+function loadTopRatedSeries() {
+    var seriesHTML = '';
+    for (var i = 0; i < topRatedSeries.length; i++) {
+        var show = topRatedSeries[i];
+        seriesHTML += createMovieCard(show);
+    }
+    if (topRatedSeriesContainer) {
+        topRatedSeriesContainer.innerHTML = seriesHTML;
+    }
+}
+
 // Create Movie Card HTML with new structure
 function createMovieCard(movie) {
     return `
@@ -338,8 +495,8 @@ function createMovieCard(movie) {
                 <h3 class="title">${movie.title}</h3>
                 <div class="genre-tag">${movie.genre}</div>
                 <div class="buttons">
-                    <button class="watchlist" data-action="watchlist">+ Watchlist</button>
-                    <button class="trailer" data-action="trailer" data-movie-id="${movie.id}">▶ Trailer</button>
+                    <button class="watchlist" data-action="watchlist">+ لیست تماشا</button>
+                    <button class="trailer" data-action="trailer" data-movie-id="${movie.id}">▶ پیش‌نمایش</button>
                 </div>
             </div>
         </div>
@@ -406,10 +563,9 @@ function setupEventListeners() {
 
             const movieId = parseInt(movieCard.dataset.movieId);
             // جستجو در هر دو آرایه
-            var movie = movies.find(m => m.id === movieId);
-            if (!movie) {
-                movie = topRatedMovies.find(m => m.id === movieId);
-            }
+            var movie = movies.find(m => m.id === movieId) ||
+                        topRatedMovies.find(m => m.id === movieId) ||
+                        topRatedSeries.find(m => m.id === movieId);
             if (movie) {
                 showMovieDetails(movie);
             }
@@ -454,7 +610,7 @@ function setupEventListeners() {
     const secondaryBtn = document.querySelector('.btn-secondary');
     if (secondaryBtn) {
         secondaryBtn.addEventListener('click', function () {
-            alert('Trailer feature coming soon!');
+            alert('امکان پیش‌نمایش به‌زودی اضافه می‌شود!');
         });
     }
 
@@ -467,7 +623,9 @@ function setupEventListeners() {
         if (!card) return;
 
         const movieId = parseInt(card.dataset.movieId);
-        const movie = movies.find(m => m.id === movieId);
+        const movie = movies.find(m => m.id === movieId) ||
+                      topRatedMovies.find(m => m.id === movieId) ||
+                      topRatedSeries.find(m => m.id === movieId);
         if (!movie) return;
 
         const action = btn.dataset.action;
@@ -475,9 +633,9 @@ function setupEventListeners() {
         if (action === 'watchlist') {
             btn.classList.toggle('active');
             if (btn.classList.contains('active')) {
-                btn.textContent = '✓ Watchlist';
+                btn.textContent = '✓ در لیست تماشا';
             } else {
-                btn.textContent = '+ Watchlist';
+                btn.textContent = '+ لیست تماشا';
             }
         }
 
@@ -543,7 +701,7 @@ function performSearch() {
     if (searchTerm === '') return;
 
     // جستجو در هر دو آرایه
-    const results = [...movies, ...topRatedMovies].filter(movie =>
+    const results = [...movies, ...topRatedMovies, ...topRatedSeries].filter(movie =>
         movie.title.toLowerCase().includes(searchTerm) ||
         movie.director.toLowerCase().includes(searchTerm) ||
         movie.cast.some(actor => actor.toLowerCase().includes(searchTerm)) ||
@@ -620,7 +778,7 @@ function showNoResults() {
 // Filter Movies by Genre
 function filterMoviesByGenre(genre) {
     // فیلتر کردن از هر دو آرایه
-    const filteredMovies = [...movies, ...topRatedMovies].filter(movie =>
+    const filteredMovies = [...movies, ...topRatedMovies, ...topRatedSeries].filter(movie =>
         movie.genre.toLowerCase() === genre.toLowerCase()
     );
 
