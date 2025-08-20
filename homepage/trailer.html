@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>پیش‌نمایش فیلم - MovieDB</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style2.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         .trailer-container {
@@ -12,13 +14,13 @@
             background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
             padding-top: 80px;
         }
-        
+
         .trailer-content {
             max-width: 1200px;
             margin: 0 auto;
             padding: 2rem;
         }
-        
+
         .back-btn {
             display: inline-flex;
             align-items: center;
@@ -29,11 +31,11 @@
             margin-bottom: 2rem;
             transition: color 0.3s ease;
         }
-        
+
         .back-btn:hover {
             color: #e6b800;
         }
-        
+
         .trailer-header {
             display: grid;
             grid-template-columns: 300px 1fr;
@@ -43,54 +45,55 @@
             border-radius: 15px;
             padding: 2rem;
         }
-        
+
         .trailer-poster {
             width: 100%;
             border-radius: 10px;
         }
-        
+
         .trailer-info h1 {
             color: #f5c518;
             margin-bottom: 1rem;
             font-size: 2.5rem;
         }
-        
+
         .trailer-info p {
             color: #ccc;
             margin-bottom: 1rem;
             line-height: 1.6;
         }
-        
+
         .trailer-stats {
             display: flex;
             gap: 2rem;
             margin: 1rem 0;
         }
-        
+
         .stat {
             text-align: center;
         }
-        
+
         .stat-value {
             font-size: 1.5rem;
             font-weight: bold;
             color: #f5c518;
         }
-        
+
         .stat-label {
             color: #999;
             font-size: 0.9rem;
         }
-        
+
         .video-container {
             background: #000;
             border-radius: 15px;
             overflow: hidden;
             margin-bottom: 2rem;
             position: relative;
-            padding-top: 56.25%; /* 16:9 aspect ratio */
+            padding-top: 56.25%;
+            /* 16:9 aspect ratio */
         }
-        
+
         .video-placeholder {
             position: absolute;
             top: 0;
@@ -104,7 +107,7 @@
             color: #fff;
             font-size: 1.2rem;
         }
-        
+
         .play-btn {
             position: absolute;
             top: 50%;
@@ -123,39 +126,40 @@
             cursor: pointer;
             transition: all 0.3s ease;
         }
-        
+
         .play-btn:hover {
             background: #f5c518;
             transform: translate(-50%, -50%) scale(1.1);
         }
-        
+
         .related-movies {
             margin-top: 3rem;
         }
-        
+
         .related-movies h2 {
             color: #f5c518;
             margin-bottom: 1.5rem;
         }
-        
+
         .related-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 1rem;
         }
-        
+
         @media (max-width: 768px) {
             .trailer-header {
                 grid-template-columns: 1fr;
                 text-align: center;
             }
-            
+
             .trailer-stats {
                 justify-content: center;
             }
         }
     </style>
 </head>
+
 <body>
     <!-- Navigation -->
     <nav class="navbar">
@@ -180,7 +184,7 @@
                 <i class="fas fa-arrow-left"></i>
                 بازگشت به فیلم‌ها
             </a>
-            
+
             <div id="trailerContent">
                 <!-- Content will be loaded by JavaScript -->
             </div>
@@ -272,17 +276,17 @@
         // Load trailer content
         function loadTrailerContent() {
             const trailerContent = document.getElementById('trailerContent');
-            
-                         if (!movie) {
-                 trailerContent.innerHTML = `
+
+            if (!movie) {
+                trailerContent.innerHTML = `
                      <div style="text-align: center; color: #fff; padding: 4rem;">
                          <h1>فیلم یافت نشد</h1>
                          <p>پیش‌نمایش فیلم درخواستی یافت نشد.</p>
                          <a href="index.html" style="color: #f5c518;">بازگشت به خانه</a>
                      </div>
                  `;
-                 return;
-             }
+                return;
+            }
 
             trailerContent.innerHTML = `
                 <div class="trailer-header">
@@ -357,7 +361,7 @@
         // Play trailer function
         function playTrailer() {
             const videoContainer = document.querySelector('.video-container');
-                         videoContainer.innerHTML = `
+            videoContainer.innerHTML = `
                  <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: #000; color: #fff;">
                      <div style="text-align: center;">
                          <div style="margin-bottom: 1rem;">🎬 در حال پخش پیش‌نمایش...</div>
@@ -376,4 +380,5 @@
         document.addEventListener('DOMContentLoaded', loadTrailerContent);
     </script>
 </body>
+
 </html>

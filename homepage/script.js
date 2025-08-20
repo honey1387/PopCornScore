@@ -72,31 +72,31 @@ var movies = [
     },
     {
         id: 6,
-        title: "The Dark Knight",
-        year: 2008,
-        rating: 9.0,
-        genre: "Action",
-        poster: "picture/30e946ea-3fda-4045-8038-93915ed2d80b.jpg",
-        director: "Christopher Nolan",
-        cast: ["Christian Bale", "Heath Ledger", "Aaron Eckhart"],
-        plot: "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.",
-        runtime: "152 min",
-        language: "English",
-        country: "United States"
+        title: "دیوار به دیوار",
+        year: 2025,
+        rating: 5.9,
+        genre: "درام",
+        poster: "../images/picture/feature/6.jpg",
+        director: "کیم ته-جون ",
+        cast: [" کانگ هانول", "یئوم هی ران", "سئو هیون وو"],
+        plot: "وو-سئونگ، مردی که بالاخره به اندازه کافی پول پس‌انداز می‌کند تا یک آپارتمان بخرد، اما این خرید به کابوسی با ورشکستگی مالی و صداهای مرموز از طبقات همسایه تبدیل می‌شود.",
+        runtime: "۱۱۸ دقیقه",
+        language: "کره ای",
+        country: " کره جنوبی"
     },
     {
         id: 7,
-        title: "Inception",
-        year: 2010,
-        rating: 8.8,
-        genre: "Sci-Fi",
-        poster: "picture/3137e6e1-7495-485c-9a67-2ed89039cfbe.jpg",
-        director: "Christopher Nolan",
-        cast: ["Leonardo DiCaprio", "Joseph Gordon-Levitt", "Ellen Page"],
-        plot: "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
-        runtime: "148 min",
-        language: "English",
-        country: "United States"
+        title: "علاءالدین",
+        year: 2019,
+        rating: 6.9,
+        genre: "رمانتیک/انیمیشن",
+        poster: "../images/picture/feature/7.jpg",
+        director: " 	گای ریچی",
+        cast: ["	ویل اسمیت", "مینا مسعود", "ائومی اسکات"],
+        plot: "در شهر خیالی اَغربه (الهام‌گرفته از بغداد و نامی ساخته‌شده با برخی حروف کلمه بغداد)، پسری یتیم و دوره‌گرد به نام علاءالدین به همراه میمونش، ابو، با شاهدخت یاسمین آشنا می‌شود که از زندگی محدودش در کاخ گریخته است. یاسمین می‌خواهد جانشین پدرش، سلطان، شود، اما انتظار می‌رود با یکی از خواستگاران سلطنتی ازدواج کند.",
+        runtime: "	۱۲۸ دقیقه",
+        language: "انگلیسی",
+        country: " ایالات متحده"
     },
     {
         id: 8,
@@ -396,22 +396,13 @@ function setupSliders() {
 
 // Setup Event Listeners
 function setupEventListeners() {
-    // Movie card clicks (for modal and poster navigation)
+    // Movie card clicks (for modal)
     document.addEventListener('click', function (e) {
         const movieCard = e.target.closest('.movie-card');
         if (movieCard) {
             // prevent modal open on button clicks
             const button = e.target.closest('button');
             if (button) return;
-
-            // Check if clicked on poster image or poster container
-            const poster = e.target.closest('.poster img') || e.target.closest('.poster');
-            if (poster) {
-                const movieId = parseInt(movieCard.dataset.movieId);
-                // Navigate to trailer page when poster is clicked
-                window.location.href = `trailer.html?movie=${movieId}`;
-                return;
-            }
 
             const movieId = parseInt(movieCard.dataset.movieId);
             // جستجو در هر دو آرایه
@@ -437,10 +428,10 @@ function setupEventListeners() {
     if (closeModal) closeModal.addEventListener('click', closeMovieModal);
     if (movieModal) {
         movieModal.addEventListener('click', function (e) {
-        if (e.target === movieModal) {
-            closeMovieModal();
-        }
-    });
+            if (e.target === movieModal) {
+                closeMovieModal();
+            }
+        });
     }
 
     // Category cards
@@ -463,23 +454,9 @@ function setupEventListeners() {
     const secondaryBtn = document.querySelector('.btn-secondary');
     if (secondaryBtn) {
         secondaryBtn.addEventListener('click', function () {
-        alert('Trailer feature coming soon!');
+            alert('Trailer feature coming soon!');
         });
     }
-
-    // Additional poster click handler for better compatibility
-    document.addEventListener('click', function (e) {
-        // Check if clicked directly on an image inside a movie card
-        if (e.target.tagName === 'IMG' && e.target.closest('.movie-card')) {
-            const movieCard = e.target.closest('.movie-card');
-            const movieId = parseInt(movieCard.dataset.movieId);
-            if (movieId) {
-                // Navigate to trailer page when any image in movie card is clicked
-                window.location.href = `trailer.html?movie=${movieId}`;
-                return;
-            }
-        }
-    });
 
     // Watchlist, trailer, and add button actions
     document.addEventListener('click', function (e) {
@@ -518,7 +495,7 @@ function setupEventListeners() {
 // Show Movie Details Modal
 function showMovieDetails(movie) {
     const stars = '★'.repeat(Math.floor(movie.rating)) + '☆'.repeat(5 - Math.floor(movie.rating));
-    
+
     movieDetails.innerHTML = `
         <div class="movie-detail">
             <img src="${movie.poster}" alt="${movie.title}" class="movie-detail-poster">
@@ -549,7 +526,7 @@ function showMovieDetails(movie) {
             </div>
         </div>
     `;
-    
+
     movieModal.style.display = 'block';
     document.body.style.overflow = 'hidden';
 }
@@ -586,7 +563,7 @@ function showSearchResults(results) {
     searchSection.className = 'search-results-section';
     searchSection.style.background = '#1a1a1a';
     searchSection.style.padding = '4rem 0';
-    
+
     searchSection.innerHTML = `
         <div class="container">
             <h2>Search Results for "${searchInput.value}"</h2>
@@ -605,7 +582,7 @@ function showSearchResults(results) {
     // Insert after hero section
     const hero = document.querySelector('.hero');
     hero.parentNode.insertBefore(searchSection, hero.nextSibling);
-    
+
     // Scroll to results
     searchSection.scrollIntoView({ behavior: 'smooth' });
 }
@@ -616,7 +593,7 @@ function showNoResults() {
     searchSection.className = 'search-results-section';
     searchSection.style.background = '#1a1a1a';
     searchSection.style.padding = '4rem 0';
-    
+
     searchSection.innerHTML = `
         <div class="container">
             <h2>No results found for "${searchInput.value}"</h2>
@@ -635,7 +612,7 @@ function showNoResults() {
     // Insert after hero section
     const hero = document.querySelector('.hero');
     hero.parentNode.insertBefore(searchSection, hero.nextSibling);
-    
+
     // Scroll to results
     searchSection.scrollIntoView({ behavior: 'smooth' });
 }
@@ -660,7 +637,7 @@ function showGenreResults(genre, results) {
     genreSection.className = 'genre-results-section';
     genreSection.style.background = '#2d2d2d';
     genreSection.style.padding = '4rem 0';
-    
+
     genreSection.innerHTML = `
         <div class="container">
             <h2>${genre.charAt(0).toUpperCase() + genre.slice(1)} Movies</h2>
@@ -679,7 +656,7 @@ function showGenreResults(genre, results) {
     // Insert after hero section
     const hero = document.querySelector('.hero');
     hero.parentNode.insertBefore(genreSection, hero.nextSibling);
-    
+
     // Scroll to results
     genreSection.scrollIntoView({ behavior: 'smooth' });
 }
@@ -690,7 +667,7 @@ function showNoGenreResults(genre) {
     genreSection.className = 'genre-results-section';
     genreSection.style.background = '#2d2d2d';
     genreSection.style.padding = '4rem 0';
-    
+
     genreSection.innerHTML = `
         <div class="container">
             <h2>No ${genre} movies found</h2>
@@ -709,7 +686,7 @@ function showNoGenreResults(genre) {
     // Insert after hero section
     const hero = document.querySelector('.hero');
     hero.parentNode.insertBefore(genreSection, hero.nextSibling);
-    
+
     // Scroll to results
     genreSection.scrollIntoView({ behavior: 'smooth' });
 }
@@ -726,7 +703,7 @@ function setupNavigation() {
             e.preventDefault();
             const targetId = this.getAttribute('href').substring(1);
             const targetSection = document.getElementById(targetId);
-            
+
             if (targetSection) {
                 targetSection.scrollIntoView({ behavior: 'smooth' });
             }
@@ -740,9 +717,9 @@ function setupNavigation() {
     // Mobile menu toggle
     if (navToggle) {
         navToggle.addEventListener('click', function () {
-        navMenu.classList.toggle('active');
-        navToggle.classList.toggle('active');
-    });
+            navMenu.classList.toggle('active');
+            navToggle.classList.toggle('active');
+        });
     }
 
     // Close mobile menu when clicking outside
@@ -821,7 +798,7 @@ document.addEventListener('DOMContentLoaded', function () {
         card.addEventListener('mouseenter', function () {
             this.style.transform = 'translateY(-10px) scale(1.02)';
         });
-        
+
         card.addEventListener('mouseleave', function () {
             this.style.transform = 'translateY(0) scale(1)';
         });
